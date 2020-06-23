@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fuel cost calculator</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="container hybrid">
+        <div class="image1"></div>
+        <div>
+          <div class="details">
+            <h3>Vehicle (hybrid)</h3>
+            <p>Ford Mondeo 2.0 Hybrid, 187 KM</p>
+          </div>
+          <div class="details">
+            <h3>Price</h3>
+            <p>151 580 PLN</p>
+          </div>
+          <div class="details">
+            <h3>Average fuel consumption</h3>
+            <p>City: 5.4 l/100km</p>
+            <p>Motorway: 5.0 l/100km</p>
+          </div>
+        </div>
+      </div>
+      <div class="container petrol">
+        <div class="image2"></div>
+        <div>
+          <div class="details">
+            <h3>Vehicle (petrol)</h3>
+            <p>Ford Mondeo 2.0 EcoBlue 190 KM</p>
+          </div>
+          <div class="details">
+            <h3>Price</h3>
+            <p>165 290 PLN</p>
+          </div>
+          <div class="details">
+            <h3>Average fuel consumption</h3>
+            <p>City: 5.6 l/100km</p>
+            <p>Motorway: 4.6 l/100km</p>
+          </div>
+        </div>
+      </div>
+      <div class="calculations">
+        <form>
+          <label for="cityMileage"> <h5>City mileage</h5> </label><br /><br />
+          <output id="cityMileageOutput">0 km</output>
+          <input
+            type="range"
+            class="custom-range"
+            id="cityMileage"
+            value="0"
+            min="0"
+            max="10000"
+            oninput="cityMileageOutput.value = cityMileage.value + ' km'"
+          /><br />
+          <label for="motorwayMileage"> <h5>Motorway mileage</h5> </label
+          ><br /><br />
+          <output id="motorwayMileageOutput">0 km</output>
+          <input
+            type="range"
+            class="custom-range"
+            id="motorwayMileage"
+            value="0"
+            min="0"
+            max="10000"
+            oninput="motorwayMileageOutput.value = motorwayMileage.value + ' km'"
+          /><br />
+        </form>
+        <div class="result">
+          <h3>Fuel cost advantage:</h3>
+          <p id="cost-advantage">0 zł</p>
+          <h3>Engine:</h3>
+          <p id="car"></p>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
